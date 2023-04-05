@@ -21,3 +21,7 @@ if __name__ == '__main__':
     print(Eduardo.altura)
     for filho in Eduardo.filhos:
         print(filho.nome)
+    Eduardo.sobrenome='dos Santos'
+    del Eduardo.filhos
+    print(Eduardo.__dict__)
+    print(eliza.__dict__)
