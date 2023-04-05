@@ -1,4 +1,6 @@
 class Pessoa:
+
+    Olhos = 2
     def __init__(self, *filhos, nome=None, idade=35, altura=1.90):   #essa linha se trata do comando de atributo de inicialização
         self.altura = altura
         self.idade = idade
@@ -23,5 +25,12 @@ if __name__ == '__main__':
         print(filho.nome)
     Eduardo.sobrenome='dos Santos'
     del Eduardo.filhos
-    print(Eduardo.__dict__)
+    print(Eduardo.__dict__)  #__dict__ mostra os atributos das instancias de um objeto. Conforme da pra ver no resulta, lista lado a lado todos os valores.
     print(eliza.__dict__)
+    print(Pessoa.Olhos)
+    print(Eduardo.Olhos)
+    print(eliza.Olhos)
+    print(id(Pessoa.Olhos), id(Eduardo.Olhos), id(eliza.Olhos))
+
+
+
