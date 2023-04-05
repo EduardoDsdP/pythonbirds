@@ -11,6 +11,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod   #Metodo de classe que se chama decorator. Serve para criar um metodo na função que não depende de um valor previo.
+    def metodo_estatico():
+        return 42
+
+    @classmethod  #Metodo que ser para quando voce quer acessar dados da propria classe do codigo em questão.
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - Olhos {cls.Olhos}'
+
 if __name__ == '__main__':
 
 
@@ -31,6 +39,8 @@ if __name__ == '__main__':
     print(Eduardo.Olhos)
     print(eliza.Olhos)
     print(id(Pessoa.Olhos), id(Eduardo.Olhos), id(eliza.Olhos))
+    print(Pessoa.metodo_estatico(), Eduardo.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), Eduardo.nome_e_atributos_de_classe())
 
 
 
