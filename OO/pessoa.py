@@ -19,6 +19,10 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - Olhos {cls.Olhos}'
 
+class Homem(Pessoa):    # Aqui criamos uma classe chamado Homem que irá herdar todos os atributos da classe Pessoa. Por isso é chamado Herança
+    pass
+
+
 if __name__ == '__main__':
 
 
@@ -41,6 +45,9 @@ if __name__ == '__main__':
     print(id(Pessoa.Olhos), id(Eduardo.Olhos), id(eliza.Olhos))
     print(Pessoa.metodo_estatico(), Eduardo.metodo_estatico())
     print(Pessoa.nome_e_atributos_de_classe(), Eduardo.nome_e_atributos_de_classe())
+    pessoa=Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa)) #O comando Isinstance serve para validar se um objeto pertence á uma instance de uma classe. Por isso é retornado verdadeiro ou falso.
+
 
 
 
