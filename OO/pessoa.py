@@ -9,7 +9,7 @@ class Pessoa:
 
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod   #Metodo de classe que se chama decorator. Serve para criar um metodo na função que não depende de um valor previo.
     def metodo_estatico():
@@ -20,7 +20,13 @@ class Pessoa:
         return f'{cls} - Olhos {cls.Olhos}'
 
 class Homem(Pessoa):    # Aqui criamos uma classe chamado Homem que irá herdar todos os atributos da classe Pessoa. Por isso é chamado Herança
-    pass
+    def cumprimentar(self):
+        cumprimentar_da_classe=super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Aperto de Mão'
+
+
+class Mutante(Pessoa):
+    Olhos = 3
 
 
 if __name__ == '__main__':
@@ -47,6 +53,9 @@ if __name__ == '__main__':
     print(Pessoa.nome_e_atributos_de_classe(), Eduardo.nome_e_atributos_de_classe())
     pessoa=Pessoa('Anonimo')
     print(isinstance(pessoa, Pessoa)) #O comando Isinstance serve para validar se um objeto pertence á uma instance de uma classe. Por isso é retornado verdadeiro ou falso.
+    print(Eduardo.Olhos)
+    print(Eduardo.cumprimentar())
+    print(eliza.cumprimentar())
 
 
 
